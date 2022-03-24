@@ -1,6 +1,6 @@
-# Webpack + Preact Single File Boilerplate
+# Preact Single File Boilerplate using Webpack
 
-This boilderplate produces a LSPA, literal single page application, where everything is in a single file. This includes the HTML, JS, CSS, and image assets.
+This boilderplate produces a LSPA, literal single page application, where everything is merged into a single file. This includes the HTML, JS, CSS, and image assets.
 
 # Why? Why not Preact CLI?
 
@@ -17,7 +17,7 @@ For embedded web applications, this can complicate things without realizing any 
     * HtmlWebpackPlugin
     * HtmlInlineScriptPlugin
     * HTMLInlineCSSWebpackPlugin
-* Images (png, jpg, svg) are inlined as base64 using webpack assets.
+* Images (png, jpg, svg) are inlined as base64 using webpack assets. Gzip negates most of the bloat added by base64.
 * Preact with JSX compilation. ([HTM](https://github.com/developit/htm) might be a good alternative, but I wanted JSX)
 * Babel with minimal overhead for non-modern browsers. 
 * SizePlugin to keep tabs on output gzip size delta between builds.
