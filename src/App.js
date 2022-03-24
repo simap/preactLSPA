@@ -1,7 +1,7 @@
 import { h } from "preact";
 import { useState, useEffect } from 'react'
 
-import "./foo.css";
+import "./App.css";
 import test from "/images/test.jpg"
 
 export default function() {
@@ -17,7 +17,7 @@ export default function() {
     })
 
     return <div>
-        <h1>stuff {time}</h1>
+        <h1 class="App">App Time: {time}</h1>
         <img src={test} />
     </div>
 }
