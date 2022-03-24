@@ -1,12 +1,12 @@
-# Preact Single File Boilerplate using Webpack
+# Preact Literal Single Page Application Boilerplate using Webpack
 
-This boilderplate produces a LSPA, literal single page application, where everything is merged into a single file. This includes the HTML, JS, CSS, and image assets.
+This boilderplate produces a LSPA, literal single page application, where everything is merged into a single file. This includes the HTML, JS, CSS, and image assets. Preact + JSX provide a framework for the application.
 
 # Why? Why not Preact CLI?
 
 Preact is impressive, weighing in at 3-4K gzipped, and recommends the Preact CLI, an "off-the-shelf solution for building Preact applications that is optimized for modern web development" that does indeed do this, but imposes many opinions along the way that increase the complexity (and size).
 
-For embedded web applications, this can complicate things without realizing any of the benefits. You don't need/have server side rendering, minizing storage size is important, bandwidth is relatively a non-isssue, multiple files complicates firmware updates, and caching things can cause support issues. Many embedded web servers lack HTTP2 support or even keepalive, so multiple requests increase load times.
+For embedded web applications, this can complicate things without realizing any of the benefits. You don't need/have server side rendering, minizing storage size is important, bandwidth is relatively a non-isssue, multiple files complicates firmware updates, and caching things can cause support issues.
 
 # What's in this?
 
