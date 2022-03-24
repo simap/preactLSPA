@@ -8,12 +8,12 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const SizePlugin = require('size-plugin');
 
 const config = {
-  // resolve: {
-  //   alias: {
-  //     react: "preact/compat",
-  //     "react-dom": "preact/compat",
-  //   },
-  // },
+  resolve: {
+    alias: {
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       inject: "body",
@@ -39,6 +39,11 @@ const config = {
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
+      },
+      {
+        test: /\.(png|jpg|svg)$/,
+        type: "asset/inline",
+        parser: { dataUrlCondition: { maxSize: 1024*1024 } },
       },
       {
         test: /\.m?js$/,
