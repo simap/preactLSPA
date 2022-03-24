@@ -1,6 +1,17 @@
-# createapp_test_css
+# Webpack + CSS + single file Boilerplate
 
-Empty project.
+
+Started with https://createapp.dev/webpack/no-library--css
+
+Added plugins for mushing things into one file, adding these plugins:
+
+* MiniCssExtractPlugin
+* HtmlWebpackPlugin
+* HtmlInlineScriptPlugin
+* HTMLInlineCSSWebpackPlugin
+* CssMinimizerPlugin
+* SizePlugin
+
 
 ## Building and running on localhost
 
@@ -24,10 +35,11 @@ npm run build-dev
 
 ## Running
 
-```sh
-node dist/bundle.js
-```
-
+TODO 
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
+
+This shows adding preact, babel, jsx, etc:
+https://medium.com/@heather.koo07/setup-preact-with-webpack-and-babel-cbd13e6bd0c
+

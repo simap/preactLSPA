@@ -8,8 +8,17 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const SizePlugin = require('size-plugin');
 
 const config = {
+  // resolve: {
+  //   alias: {
+  //     react: "preact/compat",
+  //     "react-dom": "preact/compat",
+  //   },
+  // },
   plugins: [
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      inject: "body",
+      scriptLoading: "blocking",
+    } ),
     new MiniCssExtractPlugin(),
     new HtmlInlineScriptPlugin(),
     new HTMLInlineCSSWebpackPlugin(),
@@ -30,9 +39,28 @@ const config = {
           MiniCssExtractPlugin.loader,
           'css-loader'
         ]
-      }
+      },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-react", "@babel/preset-env"],
+            plugins: [
+              [
+                "@babel/plugin-transform-react-jsx",
+                {
+                  pragma: "h",
+                  pragmaFrag: "Fragment",
+                },
+              ],
+            ],
+          },
+        },
+      },
     ]
-  }
+  },
 };
 
 module.exports = config;
