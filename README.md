@@ -1,16 +1,26 @@
-# Webpack + CSS + single file Boilerplate
+# Webpack + Preact Single File Boilerplate
 
+This boilderplate produces a LSPA, literal single page application, where everything is in a single file. This includes the HTML, JS, CSS, and image assets.
 
-Started with https://createapp.dev/webpack/no-library--css
+# Why? Why not Preact CLI?
 
-Added plugins for mushing things into one file, adding these plugins:
+Preact is impressive, weighing in at 3-4K gzipped, and recommends the Preact CLI, an "off-the-shelf solution for building Preact applications that is optimized for modern web development" that does indeed do this, but imposes many opinions along the way that increase the complexity (and size).
 
-* MiniCssExtractPlugin
-* HtmlWebpackPlugin
-* HtmlInlineScriptPlugin
-* HTMLInlineCSSWebpackPlugin
-* CssMinimizerPlugin
-* SizePlugin
+For embedded web applications, this can complicate things without realizing any of the benefits. You don't need/have server side rendering, minizing storage size is important, bandwidth is relatively a non-isssue, multiple files complicates firmware updates, and caching things can cause support issues. Many embedded web servers lack HTTP2 support or even keepalive, so multiple requests increase load times.
+
+# What's in this?
+
+* Started with https://createapp.dev/webpack/no-library--css
+* Mushing things into one file is done using these plugins:
+    * MiniCssExtractPlugin
+    * CssMinimizerPlugin
+    * HtmlWebpackPlugin
+    * HtmlInlineScriptPlugin
+    * HTMLInlineCSSWebpackPlugin
+* Images (png, jpg, svg) are inlined as base64 using webpack assets.
+* Preact with JSX compilation. ([HTM](https://github.com/developit/htm) might be a good alternative, but I wanted JSX)
+* Babel with minimal overhead for non-modern browsers. 
+* SizePlugin to keep tabs on output gzip size delta between builds.
 
 
 ## Building and running on localhost
@@ -35,7 +45,8 @@ npm run build-dev
 
 ## Running
 
-TODO 
+You can open the `dist/index.html` file directly in a browser, no local server needed since there aren't additional assets to fetch.
+
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)

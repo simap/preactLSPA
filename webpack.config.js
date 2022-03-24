@@ -51,7 +51,11 @@ const config = {
         use: {
           loader: "babel-loader",
           options: {
-            presets: ["@babel/preset-react", "@babel/preset-env"],
+            // browserlist defaults, excluding IE 11. IE 11 is responsible for a lot of polyfill!
+            targets: "> .5%, last 2 versions, Firefox ESR, not dead, not ie 11",
+            presets: [
+              "@babel/preset-react", 
+              ["@babel/preset-env", { bugfixes: true}]],
             plugins: [
               [
                 "@babel/plugin-transform-react-jsx",
