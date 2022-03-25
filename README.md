@@ -1,6 +1,6 @@
 # Preact Literal Single Page Application Boilerplate using Webpack
 
-This boilderplate produces a LSPA, literal single page application, where everything is merged into a single file. This includes the HTML, JS, CSS, and image assets. Preact + JSX provide a framework for the application.
+This boilerplate produces a LSPA, literal single page application, where everything is merged into a single file. This includes the HTML, JS, CSS, and image assets. Preact + JSX provide a framework for the application.
 
 # Why? Why not Preact CLI?
 
