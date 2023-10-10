@@ -18,6 +18,6 @@ export default function() {
 
     return <div>
         <h1 class="App">App Time: {time}</h1>
-        <img src={test} />
+        <img class="card" src={test} />
     </div>
 }

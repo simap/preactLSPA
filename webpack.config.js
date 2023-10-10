@@ -18,6 +18,7 @@ const config = {
     new HtmlWebpackPlugin({
       inject: "body",
       scriptLoading: "blocking",
+      template: "src/index.html",
     } ),
     new MiniCssExtractPlugin(),
     new HtmlInlineScriptPlugin(),
